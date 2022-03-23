@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=320">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="..\css\master.css">
+    <script async src="..\js\master.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <title>DSI I.T, Contact</title>
+</head>
+
+<body>
+    <script>
+        function onSubmit(token) {
+            document.getElementById("contactPage").submit();
+        }
+
+    </script>
+    <div class="header">
+        <a href="..\index.html"><img src="..\asset\logo.png" alt="logo" class="logo r2" height=100></a>
+        <ul class="r2">
+            <a href="..\index.html"><button type="button" name="home" class="c4">Home</button></a>
+            <a href="..\html\pricing.html"><button type="button" name="pricing" class="c4">Pricing</button></a>
+        </ul>
+    </div>
+    <div class="body">
+        <div class=" accent">
+            <p class="s3 c2 r1">Your one-stop I.T shop.</p>
+            <p class="s1 c1 r1">DSI &nbsp I.T</p>
+            <p class="s4 c3 r1">The fast, friendly, and focused I.T service.</p>
+        </div>
+        <div id=cps>
+            <p id="req" class="s3 r1">All fields are required.</p>
+
+            <form id="contactPage" method="post" action=".\redirect.html">
+                <div id="split">
+                    <span id="leftPane">
+                        <div class="fake">
+                            <div class="q1">
+                                <label class="fake" for="fname">First Name: </label>
+                                <input class="fake" type="text" id="fname" name="fname" required maxlength="24" autocorrect=off autocapitalize=words>
+                            </div>
+                            <div class="q2">
+                                <label class="fake" for="lname">Last Name: </label>
+                                <input class="fake" type="text" id="lname" name="lname" required maxlength="24" autocorrect=off autocapitalize=words>
+                            </div>
+                            <div class="q3">
+                                <label class="fake format" for="email">
+                                    E-mail:
+                                    <p class="format2">Format: abc@mail.xyz</p>
+                                </label>
+                                <input class="fake" type="email" id="email" name="email" required maxlength="320" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
+                            </div>
+                            <div class="q4">
+                                <label class="fake format" for="phone">
+                                    Phone:
+                                    <p class="format2">Format: 123-456-7890</p>
+                                </label>
+                                <input class="fake" type="tel" id="phone" name="phone" onkeyup="autoHyphen(this)" required maxlength="12" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                            </div>
+                        </div>
+                        <div class="real">
+                            <label class="real" tabindex="-1" autocomplete="off" for="f_name">First Name: </label>
+                            <input class="real" tabindex="-1" autocomplete="off" type="text" id="f_name" name="f_name">
+                            <label class="real" tabindex="-1" autocomplete="off" for="l_name">Last Name: </label>
+                            <input class="real" tabindex="-1" autocomplete="off" type="text" id="l_name" name="l_name">
+                            <label class="real" tabindex="-1" autocomplete="off" for="e_mail">Email:</label>
+                            <input class="real" tabindex="-1" autocomplete="off" type="text" id="e_mail" name="e_mail" maxlength="320" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
+                            <label class="real" tabindex="-1" autocomplete="off" for="number">Phone:</label>
+                            <input class="real" tabindex="-1" autocomplete="off" type="tel" id="number" name="number" maxlength="12" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                        </div>
+                    </span>
+
+                    <span id="rightPane">
+                        <div class="q5">
+                            <p id="charcount">0 / 400</p>
+                            <p>Inquiry Details:</p>
+                            <textarea id="details" name="details" placeholder="Enter Details Here." onkeypress="getCounter(this, 400);" onkeyup="limitTextAreaReg(this); getCounter(this, 400);" onkeydown="getCounter(this, 400);" onpaste="limitTextAreaOnPaste(this); getCounter(this, 400);" maxlength="400" rows="5" required></textarea>
+                        </div>
+                        <div>
+                            <button id="submitButtonB" class="submitButton g-recaptcha" data-sitekey="6LfSSRgeAAAAACYh98yEYfCYpSGfJLOBF0zpYwBB" data-callback='onSubmit' data-action='submit'>Submit Your New Job Quote!</button>
+                        </div>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

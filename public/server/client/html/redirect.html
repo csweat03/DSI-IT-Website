@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>Redirecting</title>
+</head>
+
+<body>
+    <p id="manual_redirect"></p>
+
+    <script>
+        var redir = false;
+
+        setInterval(function() {
+            if (!redir) {
+                window.location.replace("../index.html");
+                if (document.forms.length > 0)
+                    document.forms[0].action = window.location.pathname;
+                redir = true;
+                return;
+            } else {
+                redir = false;
+                document.getElementById("manual_redirect").textContent = 'If this does not automatically redirect you within 3 seconds, please click the link provided <a href="../index.html">here</a>.'
+            }
+        });
+
+    </script>
+</body>
+
+</html>

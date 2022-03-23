@@ -1,0 +1,687 @@
+:root {
+    /* s class = font-size, c class = color, r class = rule */
+    --s1:
+        /* title   */
+        min(max(10vw, 56px), 62px);
+    --s2:
+        /* header  */
+        min(max(2vw, 16px), 28px);
+    --s3:
+        /* content */
+        min(max(1vw, 14px), 20px);
+    --s4:
+        /* detail  */
+        min(max(0.75vw, 12px), 18px);
+    --s5:
+        /* sub_detail */
+        min(max(0.5vw, 8px), 14px);
+    --c1:
+        /* tan                */
+        #F6AE84;
+    --c2:
+        /* off-white          */
+        #dddddd;
+    --c3:
+        /* white, purple hint */
+        #efefff;
+    --c4:
+        /* vibrant-purple     */
+        #434E81;
+
+    --r1:
+        /* text-shadow */
+        min(max(calc(1vw * .1), 0px), 3px) min(max(calc(1vw * .1), 0px), 3px) 3px #11111199;
+    --r2:
+        /* h-margin    */
+        0px 2vw;
+}
+
+/* --> Begin Default Body Initialization <-- */
+
+@viewport {
+    width: device-width;
+    zoom: 1.0;
+}
+
+body {
+    height: 98vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Sans-Serif;
+    background: var(--c4);
+    overflow: auto;
+    justify-content: flex-start;
+    transition: 0.3s;
+}
+
+*:not(input):not(textarea) {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* End Defualt Body Initialization */
+
+
+/* --> Begin Variable Implementation <-- */
+
+.s1 {
+    font-size: var(--s1);
+}
+
+.s2 {
+    font-size: var(--s2);
+}
+
+.s3 {
+    font-size: var(--s3);
+}
+
+.s4 {
+    font-size: var(--s4);
+}
+
+.s5 {
+    font-size: var(--s5);
+}
+
+.c1 {
+    color: var(--c1);
+}
+
+.c2 {
+    color: var(--c2);
+}
+
+.c3 {
+    color: var(--c3);
+}
+
+.c4 {
+    color: var(--c4);
+}
+
+.r1 {
+    text-shadow: var(--r1);
+}
+
+.r2 {
+    margin: var(--r2);
+}
+
+/* End Variable Implementation */
+
+
+
+div.header {
+    text-align: left;
+    background: var(--c4);
+}
+
+div.header .logo {
+    float: left;
+}
+
+div.header ul {
+    float: right;
+}
+
+div.header button {
+    width: 120px;
+    height: 40px;
+    margin: 30px 5px;
+    border-radius: 50px;
+    border-style: none;
+    font-size: 18px;
+}
+
+div.header button:not(hover) {
+    background: #838EB1;
+}
+
+div.header button:hover {
+    background: #F6AE84;
+}
+
+@media screen and (max-width:600px) {
+    div.header {
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    div.header .logo,
+    div.header ul {
+        float: none;
+        margin-top: -25px;
+    }
+}
+
+/**********************************************************************************************************************************************/
+div.body {
+    padding: 2.5vw 2.5vw;
+    text-align: center;
+    border-radius: 40px;
+    background: #eaeaea;
+    margin: 0px 2vw;
+}
+
+div.body * {
+    background: #00000000;
+    font-weight: 600;
+}
+
+div.body div.accent {
+    padding: 20px 0px;
+    border-radius: 30px;
+    background: var(--c4);
+}
+
+div.body div.clients img {
+    margin: 0px 0.8% 0px 0.8%;
+    border-radius: 50px;
+    display: inline;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #A66E34;
+}
+
+div.body div.welcome {
+    margin-top: 2.5vw;
+    background: linear-gradient(180deg, rgb(67, 78, 129) 0%, rgb(67, 78, 129) 75%, rgb(97, 118, 159) 100%);
+}
+
+div.body div.welcome p.quote {
+    margin: -1vh 1vh 1vh 1vh;
+    padding: 5px;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+div.body div.welcome p.signature {
+    letter-spacing: 0.5px;
+}
+
+/**********************************************************************************************************************************************/
+*.fake {
+    float: none;
+}
+
+*.real,
+*.real:hover {
+    float: left;
+    margin: 0%;
+    height: 0.32px;
+    width: 0.87px;
+    background: #00000000;
+    background-color: #00000000;
+    color: #00000000;
+    border-style: none;
+    text-decoration-style: none;
+    outline: none;
+    cursor: default;
+}
+
+.grecaptcha-badge {
+    visibility: hidden;
+}
+
+/**********************************************************************************************************************************************/
+/****** contactPage ******/
+div#cps *,
+div.recaptchaDisclosure {
+    font-family: 'Dongle', sans-serif;
+}
+
+div#cps p#req {
+    padding: 15px;
+    color: rgb(240, 10, 10, 0.8);
+    letter-spacing: 1.2px;
+}
+
+div.recaptchaDisclosure {
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+div.recaptchaDisclosure p,
+div.recaptchaDisclosure a {
+    text-decoration: none;
+    letter-spacing: 0.2px;
+}
+
+div#split {
+    display: flex;
+    justify-content: space-between;
+}
+
+/**********************************************************************************************************************************************/
+/****** contactPage leftPane ******/
+span#leftPane div.q1,
+span#leftPane div.q2,
+span#leftPane div.q3,
+span#leftPane div.q4 {
+    height: 62px;
+    width: 40vw;
+    background-color: #838EB1aa;
+    margin-top: 10px;
+    border-radius: 10px;
+    position: static;
+    text-align: left;
+}
+
+span#leftPane label {
+    padding: 10px 0px 0px 30px;
+    letter-spacing: -1px;
+    font-size: 32px;
+    float: left;
+    color: #434E81;
+}
+
+span#leftPane label.format {
+    float: none;
+    position: relative;
+    top: 5px;
+    display: inline;
+}
+
+span#leftPane p.format2 {
+    float: none;
+    position: relative;
+    left: -63px;
+    top: 13px;
+    margin: 0px -50px 0px 0px;
+    padding: 0px;
+    font-size: 22px;
+    color: #F0F0FFFF;
+    display: inline;
+}
+
+span#leftPane input {
+    font-family: sans-serif;
+    float: right;
+    width: 60%;
+    margin: 10px 10px 10px -50px;
+    padding: 13px 10px 13px 10px;
+    font-size: 12px;
+    outline: none;
+    border: none;
+    background-color: rgba(250, 250, 250, 0.35);
+    border-radius: 5px;
+}
+
+/**********************************************************************************************************************************************/
+/****** contactPage rightPane ******/
+span#rightPane div.q5,
+div button.submitButton {
+    height: 206px;
+    width: 40vw;
+
+    background-color: #838EB1aa;
+    margin-top: 10px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+span#rightPane div button.submitButton {
+    height: 62px;
+    text-align: center;
+    font-size: 32px;
+    letter-spacing: -1px;
+    color: #434E81;
+    padding: 10px;
+    display: block;
+}
+
+span#rightPane div.q5 p {
+    text-align: center;
+    font-size: 32px;
+    letter-spacing: -1px;
+    color: #434E81;
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: -4px;
+    margin-left: 10px;
+}
+
+span#rightPane p#charcount {
+    float: right;
+    font-size: 26px;
+    margin-top: 14px;
+    margin-bottom: -10px;
+    margin-right: 10px;
+}
+
+span#rightPane label {
+    float: none;
+    margin: 0px;
+    letter-spacing: -1px;
+    display: inline;
+    font-size: 28px;
+    float: left;
+    color: #434E81;
+}
+
+span#rightPane textarea,
+textarea:hover {
+    border: solid;
+    resize: none;
+    box-shadow: none;
+    text-decoration-style: none;
+    outline: none;
+    margin: -5px 5px -5px 5px;
+    padding: 2px 8px 2px 8px;
+    width: calc(100% - 32px);
+    height: 151px;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: #434E81;
+    background-color: rgba(250, 250, 250, 0.25);
+}
+
+@media screen and (max-width:1600px) {
+    div#split {
+        display: contents;
+        justify-content: none;
+    }
+
+    span#leftPane div.q1,
+    div.q2,
+    div.q3,
+    div.q4 {
+        margin-left: 2.4vw;
+        margin-top: 10px;
+        height: 62px;
+        width: 95%;
+        background-color: #838EB1aa;
+        border-radius: 10px;
+        position: static;
+        text-align: left;
+    }
+
+    span#leftPane label {
+        padding: 10px 0px 0px 10px;
+        letter-spacing: -1px;
+        font-size: 32px;
+        color: #434E81;
+    }
+
+    span#leftPane label.format {
+        float: none;
+        position: relative;
+        top: 5px;
+        display: inline;
+    }
+
+    span#leftPane p.format2 {
+        float: none;
+        position: relative;
+        left: -63px;
+        top: 13px;
+        margin: 0px -50px 0px 0px;
+        padding: 0px;
+        font-size: 22px;
+        color: #F0F0FFFF;
+        display: inline;
+    }
+
+    span#leftPane input {
+        font-family: sans-serif;
+        float: right;
+        width: 52%;
+        margin: 10px 10px 10px -50px;
+        padding: 13px 10px 13px 10px;
+        font-size: 12px;
+        outline: none;
+        shadow: none;
+        border: none;
+        background-color: rgba(250, 250, 250, 0.35);
+        border-radius: 5px;
+    }
+
+    /* right */
+    span#rightPane div.q5,
+    div button.submitButton {
+        margin-left: 2.4vw;
+        margin-top: 10px;
+        height: 206px;
+        width: 95%;
+        background-color: #838EB1aa;
+        border-radius: 10px;
+        position: static;
+        text-align: left;
+    }
+
+    span#rightPane div button.submitButton {
+        height: 62px;
+        text-align: center;
+        font-size: 32px;
+        letter-spacing: -1px;
+        color: #434E81;
+        padding: 10px;
+        display: block;
+    }
+
+    span#rightPane div.q5 p {
+        text-align: left;
+        font-size: 32px;
+        letter-spacing: -1px;
+        color: #434E81;
+        display: flex;
+        margin-left: 10px;
+    }
+
+    span#rightPane p#charcount {
+        float: right;
+        font-size: 26px;
+        margin-top: 14px;
+        margin-bottom: -30px;
+        margin-right: 18px;
+    }
+
+    span#rightPane label {
+        float: none;
+        margin: 0px;
+        letter-spacing: -1px;
+        display: inline;
+        font-size: 28px;
+        float: left;
+        color: #434E81;
+    }
+
+    span#rightPane textarea,
+    textarea:hover {
+        border: solid;
+        resize: none;
+        shadow: none;
+        box-shadow: none;
+        text-decoration-style: none;
+        outline: none;
+        margin: -5px 5px -5px 5px;
+        padding: 2px 8px 2px 8px;
+        width: calc(100% - 32px);
+        height: 151px;
+        border-width: 2px;
+        border-radius: 10px;
+        border-color: #434E81;
+        background-color: rgba(250, 250, 250, 0.25);
+    }
+}
+
+/**********************************************************************************************************************************************/
+/****** contactPage universal ******/
+div#cps input:focus {
+    box-shadow: inset 0px 0px 0px 2.5px #F6AE84;
+    transition: 0.6s;
+}
+
+div#cps input:not(focus) {
+    box-shadow: inset 0px 0px 0px 2.5px rgba(250, 250, 250, 0);
+    transition: 0.4s;
+}
+
+/**********************************************************************************************************************************************/
+/****** pricingPage ******/
+
+div.pricingPage * {
+    font-family: 'Dongle', sans-serif;
+    font-size: 20px;
+}
+
+div.pricingPage h1 {
+    display: contents;
+    font-size: 72px;
+    letter-spacing: 8px;
+    text-shadow: 2px 2px #111111cc;
+}
+
+div.pricingPage h5 {
+    display: block;
+    font-size: 30px;
+    letter-spacing: 6px;
+}
+
+div.pricingPage p {
+    display: contents;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+div.pricingPage ul,
+li {
+    list-style: none;
+    text-decoration: none;
+}
+
+div.pricingPage {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 50px 0px 50px;
+    border-radius: 3vw;
+    background: #434E81;
+}
+
+div.pricingPage span.leftPane,
+div.pricingPage span.rightPane {
+    margin: 2.5%;
+    width: 40vw;
+    border-radius: 2vw;
+    background: #838EB1;
+}
+
+@media screen and (max-width:1300px) {
+    div.pricingPage {
+        display: block;
+        justify-content: none;
+    }
+
+    div.pricingPage span.leftPane {
+        display: inline-block;
+        width: 95%;
+        margin-bottom: 0px;
+    }
+
+    div.pricingPage span.rightPane {
+        display: inline-block;
+        width: 95%;
+    }
+
+    div.pricingPage h1 {
+        text-align: center;
+        font-size: 7vw;
+        letter-spacing: 3px;
+        text-shadow: 2px 2px #111111cc;
+        padding: 0.05vh;
+        margin: 0.05vh;
+    }
+
+    div.pricingPage h5 {
+        font-size: 4vw;
+        letter-spacing: 2px;
+        padding: 0.05vh;
+        margin: 0.05vh;
+        margin-top: -4%;
+    }
+
+    div.pricingPage p {
+        display: contents;
+        float: none;
+        font-size: max(3vw, 16px);
+        letter-spacing: 1px;
+        padding: 0.05vh;
+        margin: 0.05vh;
+    }
+
+    div.pricingPage ul,
+    div.pricingPage li {
+        font-size: max(2vw, 14px);
+        letter-spacing: 1px;
+        padding: 0.05vh;
+        margin: 0.05vh;
+    }
+}
+
+/**********************************************************************************************************************************************/
+/****** large business contact ******/
+div#pricingContact {
+    margin: 25px 50px -6px 50px;
+    border-radius: 30px;
+    background: #434E81;
+}
+
+div#pricingContact * {
+    font-family: 'Dongle', sans-serif;
+    font-size: 20px;
+}
+
+div#pricingContact h1 {
+    display: contents;
+    font-size: 48px;
+    letter-spacing: 4px;
+}
+
+div#pricingContact h5 {
+    display: block;
+    font-size: 26px;
+    letter-spacing: 2px;
+}
+
+div#pricingContact a,
+a:active {
+    display: contents;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    color: #000000;
+}
+
+@media screen and (max-width:1300px) {
+    div#pricingContact h1 {
+        display: contents;
+        font-size: 5vw;
+        letter-spacing: 0.3vw;
+    }
+
+    div#pricingContact h5 {
+        display: block;
+        font-size: 4vw;
+        letter-spacing: 0.2vw;
+    }
+
+    div#pricingContact a,
+    a:active {
+        display: contents;
+        font-size: 3vw;
+        letter-spacing: 0.2vw;
+        text-decoration: none;
+        color: #000000;
+    }
+}
