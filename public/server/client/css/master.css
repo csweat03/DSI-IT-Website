@@ -27,13 +27,21 @@
     --c4:
         /* vibrant-purple     */
         #434E81;
-
+    --c5:
+        /* light-purple */
+        #B0BAD0;
+    --c6:
+        /* lighter-purple */
+        #FEFEFE33;
     --r1:
         /* text-shadow */
         min(max(calc(1vw * .1), 0px), 3px) min(max(calc(1vw * .1), 0px), 3px) 3px #11111199;
     --r2:
         /* h-margin    */
         0px 2vw;
+    --r3:
+        /* letter-spacing */
+        min(max(calc(1vw * .1), 0px), 2px);
 }
 
 /* --> Begin Default Body Initialization <-- */
@@ -107,12 +115,24 @@ body {
     color: var(--c4);
 }
 
+.c5 {
+    color: var(--c5);
+}
+
+.c6 {
+    color: var(--c6);
+}
+
 .r1 {
     text-shadow: var(--r1);
 }
 
 .r2 {
     margin: var(--r2);
+}
+
+.r3 {
+    letter-spacing: var(--r3);
 }
 
 /* End Variable Implementation */
@@ -182,29 +202,34 @@ div.body div.accent {
     background: var(--c4);
 }
 
-div.body div.clients img {
+/* div.body div.clients img {
     margin: 0px 0.8% 0px 0.8%;
     border-radius: 50px;
     display: inline;
     border-width: 2px;
     border-style: solid;
     border-color: #A66E34;
-}
+} */
 
 div.body div.welcome {
     margin-top: 2.5vw;
-    background: linear-gradient(180deg, rgb(67, 78, 129) 0%, rgb(67, 78, 129) 75%, rgb(97, 118, 159) 100%);
+    background: linear-gradient(180deg, var(--c4) 75%, rgb(97, 118, 159) 100%);
 }
 
-div.body div.welcome p.quote {
-    margin: -1vh 1vh 1vh 1vh;
-    padding: 5px;
+div.body div.welcome p.messageHeader {
+    padding: 15px 50px;
     text-align: left;
-    letter-spacing: 1px;
 }
 
-div.body div.welcome p.signature {
-    letter-spacing: 0.5px;
+div.body div.welcome p.messageContent {
+    padding: 15px 125px;
+    line-height: 170%;
+    text-align: left;
+}
+
+div.body div.welcome p.messageSignature {
+    padding: 15px 50px;
+    text-align: right;
 }
 
 /**********************************************************************************************************************************************/
@@ -244,20 +269,6 @@ div#cps p#req {
     letter-spacing: 1.2px;
 }
 
-div.recaptchaDisclosure {
-    position: absolute;
-    left: 0;
-    bottom: 0px;
-    width: 100%;
-    text-align: center;
-}
-
-div.recaptchaDisclosure p,
-div.recaptchaDisclosure a {
-    text-decoration: none;
-    letter-spacing: 0.2px;
-}
-
 div#split {
     display: flex;
     justify-content: space-between;
@@ -271,7 +282,7 @@ span#leftPane div.q3,
 span#leftPane div.q4 {
     height: 62px;
     width: 40vw;
-    background-color: #838EB1aa;
+    background-color: var(--c5);
     margin-top: 10px;
     border-radius: 10px;
     position: static;
@@ -283,7 +294,7 @@ span#leftPane label {
     letter-spacing: -1px;
     font-size: 32px;
     float: left;
-    color: #434E81;
+    color: var(--c4);
 }
 
 span#leftPane label.format {
@@ -301,7 +312,7 @@ span#leftPane p.format2 {
     margin: 0px -50px 0px 0px;
     padding: 0px;
     font-size: 22px;
-    color: #F0F0FFFF;
+    color: var(--c3);
     display: inline;
 }
 
@@ -314,7 +325,7 @@ span#leftPane input {
     font-size: 12px;
     outline: none;
     border: none;
-    background-color: rgba(250, 250, 250, 0.35);
+    background-color: var(--c6);
     border-radius: 5px;
 }
 
@@ -324,8 +335,7 @@ span#rightPane div.q5,
 div button.submitButton {
     height: 206px;
     width: 40vw;
-
-    background-color: #838EB1aa;
+    background-color: var(--c5);
     margin-top: 10px;
     border-radius: 10px;
     text-align: left;
@@ -336,7 +346,7 @@ span#rightPane div button.submitButton {
     text-align: center;
     font-size: 32px;
     letter-spacing: -1px;
-    color: #434E81;
+    color: var(--c4);
     padding: 10px;
     display: block;
 }
@@ -345,7 +355,7 @@ span#rightPane div.q5 p {
     text-align: center;
     font-size: 32px;
     letter-spacing: -1px;
-    color: #434E81;
+    color: var(--c4);
     display: flex;
     margin-top: 5px;
     margin-bottom: -4px;
@@ -367,7 +377,7 @@ span#rightPane label {
     display: inline;
     font-size: 28px;
     float: left;
-    color: #434E81;
+    color: var(--c4);
 }
 
 span#rightPane textarea,
@@ -383,25 +393,24 @@ textarea:hover {
     height: 151px;
     border-width: 2px;
     border-radius: 10px;
-    border-color: #434E81;
-    background-color: rgba(250, 250, 250, 0.25);
+    border-color: var(--c4);
+    background-color: var(--c6);
 }
 
-@media screen and (max-width:1600px) {
+@media screen and (max-width:1200px) {
     div#split {
         display: contents;
         justify-content: none;
     }
 
     span#leftPane div.q1,
-    div.q2,
-    div.q3,
-    div.q4 {
+    span#leftPane div.q2,
+    span#leftPane div.q3,
+    span#leftPane div.q4 {
         margin-left: 2.4vw;
         margin-top: 10px;
         height: 62px;
         width: 95%;
-        background-color: #838EB1aa;
         border-radius: 10px;
         position: static;
         text-align: left;
@@ -411,7 +420,6 @@ textarea:hover {
         padding: 10px 0px 0px 10px;
         letter-spacing: -1px;
         font-size: 32px;
-        color: #434E81;
     }
 
     span#leftPane label.format {
@@ -429,7 +437,6 @@ textarea:hover {
         margin: 0px -50px 0px 0px;
         padding: 0px;
         font-size: 22px;
-        color: #F0F0FFFF;
         display: inline;
     }
 
@@ -443,7 +450,6 @@ textarea:hover {
         outline: none;
         shadow: none;
         border: none;
-        background-color: rgba(250, 250, 250, 0.35);
         border-radius: 5px;
     }
 
@@ -465,7 +471,6 @@ textarea:hover {
         text-align: center;
         font-size: 32px;
         letter-spacing: -1px;
-        color: #434E81;
         padding: 10px;
         display: block;
     }
@@ -474,7 +479,6 @@ textarea:hover {
         text-align: left;
         font-size: 32px;
         letter-spacing: -1px;
-        color: #434E81;
         display: flex;
         margin-left: 10px;
     }
@@ -494,7 +498,6 @@ textarea:hover {
         display: inline;
         font-size: 28px;
         float: left;
-        color: #434E81;
     }
 
     span#rightPane textarea,
@@ -511,8 +514,6 @@ textarea:hover {
         height: 151px;
         border-width: 2px;
         border-radius: 10px;
-        border-color: #434E81;
-        background-color: rgba(250, 250, 250, 0.25);
     }
 }
 
@@ -531,12 +532,19 @@ div#cps input:not(focus) {
 /**********************************************************************************************************************************************/
 /****** pricingPage ******/
 
-div.pricingPage * {
+div.pricingPage p {
     font-family: 'Dongle', sans-serif;
-    font-size: 20px;
 }
 
-div.pricingPage h1 {
+div.pricingPage p.s1 {
+    margin-bottom: -30px;
+}
+
+div.pricingPage p.s4 {
+    font-size: 110%;
+}
+
+/* div.pricingPage h1 {
     display: contents;
     font-size: 72px;
     letter-spacing: 8px;
@@ -550,10 +558,8 @@ div.pricingPage h5 {
 }
 
 div.pricingPage p {
-    display: contents;
-    font-size: 24px;
     letter-spacing: 1px;
-}
+} */
 
 div.pricingPage ul,
 li {
@@ -639,28 +645,22 @@ div#pricingContact {
 
 div#pricingContact * {
     font-family: 'Dongle', sans-serif;
-    font-size: 20px;
 }
 
-div#pricingContact h1 {
-    display: contents;
-    font-size: 48px;
-    letter-spacing: 4px;
+div#pricingContact p.s1 {
+    font-size: 44px;
 }
 
-div#pricingContact h5 {
-    display: block;
-    font-size: 26px;
-    letter-spacing: 2px;
+div#pricingContact a.r2 {
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    text-align: center;
 }
 
 div#pricingContact a,
 a:active {
-    display: contents;
-    font-size: 22px;
-    letter-spacing: 0.5px;
     text-decoration: none;
-    color: #000000;
 }
 
 @media screen and (max-width:1300px) {

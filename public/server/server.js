@@ -60,8 +60,8 @@ function interpretRequest(request, response, flag) {
                 subject: 'DSI IT Mail Client: ! New Form Sent, Info Below. !',
                 text: msg
             };
-            
-            
+
+
             sender.sendMail(mailConfiguration);
             provideContent(request, response);
         })
@@ -71,6 +71,6 @@ function interpretRequest(request, response, flag) {
 require('http').createServer(function (req, res) {
     provideContent(req, res);
     interpretRequest(req, res);
-}).listen(80);
+}).listen(8080);
 
 console.log("Server has been initialized.");
